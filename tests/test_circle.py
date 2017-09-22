@@ -24,7 +24,6 @@ def test_circle_repr():
     assert c2.__repr__() == '<Circle: 50>'
 
 
-
 def test_circle_diameter():
     c1 = Circle(10)
     assert c1.diameter() == 20
