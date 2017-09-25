@@ -1,3 +1,5 @@
+from math import pi
+
 class Circle():
     """Implementation av klassen `Circle`.
 
@@ -10,7 +12,19 @@ class Circle():
     Implementera den magiska metoden `__repr__` så att ett cirkel-objekt får
     representationen `<Circle: 10>` om den har radien 10.
     """
-    pass
+
+    def __init__(self, radius, color='red'):
+        self.radius = radius
+        self.color = color
+
+    def diameter (self):
+        return self.radius * 2
+
+    def area (self):
+        return self.radius ** 2 * pi
+
+    def __repr__ (self):
+        return '<Circle: {}>'.format(self.radius)
 
 
 class Rectangle():
@@ -28,7 +42,22 @@ class Rectangle():
     Implementera även den magisa metoden `__eq__` så att två rectanglar anses
     lika om de har samma proportioner.
     """
-    pass
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def __eq__ (self, other):
+        return self.width / other.width == self.height / other.height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimiter(self):
+        return self.width * 2 + self.height * 2
+
+    def __repr__(self):
+        return '<Rectangle: {}, {}>' .format(self.width, self.height)
+
 
 
 class Employee():
@@ -47,4 +76,23 @@ class Employee():
     Metoderna __str__ och __repr__ ska finnas, se testerna för exempel på
     hur deras utdata ska se ut.
     """
-    pass
+    current_id = 0
+
+    def __init__(self, name, salary):
+        self.id = Employee.current_id
+        Employee.current_id += 1
+        self.name = name
+        self.salary = salary
+
+    def raise_salary(self, precent):
+        self.salary = self.salary * (precent / 100) + self.salary
+        return self.salary
+
+    def annual_salary(self):
+        return self.salary * 12
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return '<Employee: {}>'.format(self.name)

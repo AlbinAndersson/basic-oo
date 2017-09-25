@@ -2,8 +2,6 @@ import pytest
 from exercises.oo import Circle
 from math import pi
 
-
-@pytest.mark.skip('Not implemented yet.')
 def test_circle_creation():
     c1 = Circle(10)
     assert c1.radius == 10
@@ -18,16 +16,15 @@ def test_circle_creation():
     assert c3.color == 'blue'
 
 
-@pytest.mark.skip('Not implemented yet.')
 def test_circle_repr():
     c1 = Circle(10)
     assert c1.__repr__() == '<Circle: 10>'
 
     c2 = Circle(50)
-    assert c1.__repr__() == '<Circle: 50>'
+    assert c2.__repr__() == '<Circle: 50>'
 
 
-@pytest.mark.skip('Not implemented yet.')
+
 def test_circle_diameter():
     c1 = Circle(10)
     assert c1.diameter() == 20
@@ -36,7 +33,7 @@ def test_circle_diameter():
     assert c2.diameter() == 40
 
 
-@pytest.mark.skip('Not implemented yet.')
+
 def test_circle_area():
     c1 = Circle(10)
     assert abs(c1.area() - 10*10*pi) < 0.00001  # Close enough!
