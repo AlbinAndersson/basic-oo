@@ -1,5 +1,6 @@
 from math import pi
 
+
 class Circle():
     """Implementation av klassen `Circle`.
 
@@ -17,13 +18,13 @@ class Circle():
         self.radius = radius
         self.color = color
 
-    def diameter (self):
+    def diameter(self):
         return self.radius * 2
 
-    def area (self):
+    def area(self):
         return self.radius ** 2 * pi
 
-    def __repr__ (self):
+    def __repr__(self):
         return '<Circle: {}>'.format(self.radius)
 
 
@@ -46,7 +47,7 @@ class Rectangle():
         self.width = width
         self.height = height
 
-    def __eq__ (self, other):
+    def __eq__(self, other):
         return self.width / other.width == self.height / other.height
 
     def area(self):
@@ -57,7 +58,6 @@ class Rectangle():
 
     def __repr__(self):
         return '<Rectangle: {}, {}>' .format(self.width, self.height)
-
 
 
 class Employee():
